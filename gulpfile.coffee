@@ -12,7 +12,10 @@ stylesSrc = './src/entries/*'
 autoprefix = new LessPluginAutoPrefix
   browsers: [
     'last 3 Chrome versions'
+    'ie >= 10'
+    'iOS >= 6'
     'last 3 Firefox versions'
+    'Safari >= 6'
   ]
 
 gulp.task 'styles', ->
