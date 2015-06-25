@@ -1,0 +1,34 @@
+// Inputs
+
+textarea,
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  background: @light-gray-100;
+  border-radius: .2em;
+  border: 1px solid @light-gray-400;
+  box-sizing: border-box;
+  padding: .5em;
+  width: 100%;
+  max-width: 500px;
+
+  &:hover {
+    border-color: @light-gray-600;
+  }
+
+  &:focus {
+    border-color: @light-gray-700;
+    outline: none;
+    box-shadow: 0 0 6px @light-gray-400;
+  }
+
+  &.error {
+    background: @red-50;
+    border: 1px solid @red-300;
+  }
+
+  &.error:focus {
+    box-shadow: 0 0 6px @red-300;
+  }
+
+}

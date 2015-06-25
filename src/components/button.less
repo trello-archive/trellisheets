@@ -1,0 +1,72 @@
+// Button
+
+button {
+  background: linear-gradient(to bottom, @light-gray-200 0%, @light-gray-300 100%);
+  border-radius: .3em;
+  box-shadow: 0 2px 0 @light-gray-800;
+  color: hsl(0, 0%, 30%);
+  display: inline-block;
+  font-weight: bold;
+  margin-bottom: .8em;
+  padding: .6em 1.3em;
+  position: relative;
+  text-decoration: none;
+  border: 0px;
+}
+
+  button:not([disabled]):focus,
+  button:not([disabled]):hover {
+    background: linear-gradient(to bottom, @light-gray-300 0%, @light-gray-400 100%);
+    color: hsl(0, 0%, 30%);
+  }
+
+  button:not([disabled]):active {
+    background: linear-gradient(to bottom, @light-gray-400 0%, @light-gray-500 100%);
+    color: hsl(0, 0%, 30%);
+  }
+
+  // Disabled
+
+  button[disabled] {
+    background: @light-gray-200;
+    box-shadow: none;
+    color: @default-font-color;
+    cursor: default;
+  }
+
+
+// Modifiers
+
+  // Primary
+
+  button.mod-primary {
+    background: linear-gradient(to bottom, @green-500 0%, @green-600 100%);
+    box-shadow: 0 2px 0 @green-900;
+    color: #fff;
+  }
+
+    button.mod-primary:not([disabled]):focus,
+    button.mod-primary:not([disabled]):hover {
+      background: linear-gradient(to bottom, @green-600 0%, @green-700 100%);
+      color: #fff;
+    }
+
+    button.mod-primary:not([disabled]):active {
+      background: linear-gradient(to bottom, @green-700 0%, @green-800 100%);
+      color: #fff;
+    }
+
+  // Inline
+
+  button.mod-inline {
+    box-shadow: 0 1px 0 @light-gray-500;
+    display: inline;
+    font-size: .8em;
+    padding: .3em .8em;
+  }
+
+  // Wide
+
+  button.mod-wide {
+    padding: .6em 2.6em;
+  }

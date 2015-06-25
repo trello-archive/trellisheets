@@ -1,0 +1,69 @@
+// Typography
+
+button, html, input, select, textarea {
+  font-family: "jaf-facitweb", sans-serif;
+}
+
+body {
+  color: hsl(0, 0%, 30%);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+}
+
+b, strong, h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
+pre {
+  background-color: @light-gray-100;
+  border-radius: .4em;
+  font-size: .8em;
+  padding: 1em;
+}
+
+code {
+  background: @light-gray-100;
+  font-family: "fira-mono", monospace;
+  padding: 0 4px;
+  border-radius: .4em;
+}
+
+  pre > code {
+    background: transparent;
+    padding: 0;
+  }
+
+a {
+  color: @trello-blue-400;
+}
+
+  a:hover,
+  a:visited:hover {
+    color: @trello-blue-900;
+  }
+
+  a:visited {
+    color: @trello-blue-500;
+  }
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid @light-gray-300;
+  margin: 1em 0;
+  padding: 0;
+}
+
+@media @small {
+
+  body {
+    font-size: 16px;
+  }
+
+}
