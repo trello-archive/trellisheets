@@ -506,6 +506,7 @@ hr {
   }
 }
 button {
+  background: -webkit-linear-gradient(top, #e2e4e6 0%, #d6dadc 100%);
   background: linear-gradient(to bottom, #e2e4e6 0%, #d6dadc 100%);
   border-radius: .3em;
   box-shadow: 0 2px 0 #959da1;
@@ -520,10 +521,12 @@ button {
 }
 button:not([disabled]):focus,
 button:not([disabled]):hover {
+  background: -webkit-linear-gradient(top, #d6dadc 0%, #cdd2d4 100%);
   background: linear-gradient(to bottom, #d6dadc 0%, #cdd2d4 100%);
   color: #4d4d4d;
 }
 button:not([disabled]):active {
+  background: -webkit-linear-gradient(top, #cdd2d4 0%, #c4c9cc 100%);
   background: linear-gradient(to bottom, #cdd2d4 0%, #c4c9cc 100%);
   color: #4d4d4d;
 }
@@ -534,16 +537,19 @@ button[disabled] {
   cursor: default;
 }
 button.mod-primary {
+  background: -webkit-linear-gradient(top, #61bd4f 0%, #5aac44 100%);
   background: linear-gradient(to bottom, #61bd4f 0%, #5aac44 100%);
   box-shadow: 0 2px 0 #3f6f21;
   color: #fff;
 }
 button.mod-primary:not([disabled]):focus,
 button.mod-primary:not([disabled]):hover {
+  background: -webkit-linear-gradient(top, #5aac44 0%, #519839 100%);
   background: linear-gradient(to bottom, #5aac44 0%, #519839 100%);
   color: #fff;
 }
 button.mod-primary:not([disabled]):active {
+  background: -webkit-linear-gradient(top, #519839 0%, #49852e 100%);
   background: linear-gradient(to bottom, #519839 0%, #49852e 100%);
   color: #fff;
 }
