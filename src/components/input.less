@@ -1,34 +1,72 @@
 // Inputs
 
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: .3em;
+}
+
 textarea,
 input[type="text"],
 input[type="email"],
-input[type="password"] {
+input[type="password"],
+input[type="number"] {
   background: @light-gray-100;
   border-radius: .2em;
   border: 1px solid @light-gray-400;
   box-sizing: border-box;
+  display: block;
+  margin-bottom: 1em;
   padding: .5em;
   width: 100%;
   max-width: 500px;
 
-  &:hover {
+  &:not([disabled]):hover {
     border-color: @light-gray-600;
   }
 
-  &:focus {
+  &:not([disabled]):focus {
     border-color: @light-gray-700;
     outline: none;
     box-shadow: 0 0 6px @light-gray-400;
   }
 
-  &.error {
-    background: @red-50;
-    border: 1px solid @red-300;
+}
+
+textarea {
+  min-height: 6em;
+}
+
+// State
+
+textarea[disabled],
+input[disabled][type="text"],
+input[disabled][type="email"],
+input[disabled][type="password"],
+input[disabled][type="number"] {
+  background: @light-gray-50;
+  border-color: @light-gray-200;
+  box-shadow: none;
+  color: @quiet-font-color;
+  cursor: default;
+}
+
+textarea.is-error,
+input[type="text"].is-error,
+input[type="email"].is-error,
+input[type="password"].is-error,
+input[type="number"].is-error {
+  background: @red-50;
+  border-color: @red-300;
+
+  &:hover {
+    box-shadow: 0 0 3px @red-200;
+    border-color: @red-300;
   }
 
-  &.error:focus {
+  &:focus {
     box-shadow: 0 0 6px @red-300;
+    border-color: @red-300;
   }
 
 }
