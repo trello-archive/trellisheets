@@ -65,4 +65,6 @@ Guide](https://trello.com/about/branding#colors) for how we use brand colors.
 1. Read the [style guide](styleguide.md).
 2. `npm install`
 3. Add to `src/**/` and import in respective `/src/entries` files.
-4. `./tools/gulp`
+4. `./tools/dev` (runs tools/gulp and tools/serve)
+5. Add to public/index.html if you want.
+6. Visit [localhost:8080](http://localhost:8080)
