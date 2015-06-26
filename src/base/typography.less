@@ -11,13 +11,36 @@ body {
   line-height: 1.5;
 }
 
+// Headers
+
 h1, h2, h3, h4, h5, h6 {
-  line-height: 1.2;
+  line-height: 1.25;
+  margin-top: 1em;
 }
+
+h1 {
+  font-size: 1.95em;
+}
+
+h2 {
+  font-size: 1.56em;
+}
+
+h3 {
+  font-size: 1.25em;
+}
+
+h4, h5, h6 {
+  font-size: 1em;
+}
+
+// Bold
 
 b, strong, h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
+
+// Pre / Code
 
 pre {
   background-color: @light-gray-100;
@@ -38,6 +61,9 @@ code {
     padding: 0;
   }
 
+
+// Links
+
 a {
   color: @trello-blue-400;
 }
@@ -51,6 +77,9 @@ a {
     color: @trello-blue-500;
   }
 
+
+// Horizontal Rule
+
 hr {
   display: block;
   height: 1px;
@@ -59,6 +88,22 @@ hr {
   margin: 1em 0;
   padding: 0;
 }
+
+
+// Selection
+
+::-moz-selection {
+  background: @trello-blue-100;
+  text-shadow: none;
+}
+
+::selection {
+  background: @trello-blue-100;
+  text-shadow: none;
+}
+
+
+// Smaller Screens
 
 @media @small {
 
