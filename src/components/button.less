@@ -7,8 +7,8 @@ button {
   color: hsl(0, 0%, 30%);
   display: inline-block;
   font-weight: bold;
-  margin-bottom: .8em;
-  padding: .6em 1.3em;
+  margin: .3em 1em 1em 0;
+  padding: .6em 1.4em;
   position: relative;
   text-decoration: none;
   border: 0px;
@@ -31,8 +31,9 @@ button {
 button[disabled] {
   background: @light-gray-200;
   box-shadow: none;
-  color: @default-font-color;
+  color: @quiet-font-color;
   cursor: default;
+  font-weight: 300;
 }
 
 
@@ -44,6 +45,7 @@ button[disabled] {
     background: linear-gradient(to bottom, @green-500 0%, @green-600 100%);
     box-shadow: 0 2px 0 @green-900;
     color: #fff;
+    padding: .6em 2.2em;
   }
 
     button.mod-primary:not([disabled]):focus,
@@ -66,8 +68,6 @@ button[disabled] {
     padding: .3em .8em;
   }
 
-  // Wide
-
-  button.mod-wide {
-    padding: .6em 2.6em;
+  button.mod-full {
+    width: 100%;
   }
