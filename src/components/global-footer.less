@@ -3,7 +3,7 @@
 .global-footer {
   color: @quiet-font-color;
   font-size: .8em;
-  margin: 2em 1em;
+  margin: 4em 1em;
   text-align: center;
 }
 
@@ -17,6 +17,16 @@
       display: inline-block;
       margin: 0 .4em;
     }
+
+      .global-footer-list-item-link,
+      .global-footer-list-item-link:visited {
+        color: @quiet-font-color;
+
+        &:hover {
+          color: @default-font-color;
+        }
+
+      }
 
   .global-footer-detail {
     margin: .5em 0;
