@@ -60,6 +60,25 @@ button[disabled] {
       color: #fff;
     }
 
+  // Danger
+
+  button.mod-danger {
+    color: @red-500;
+  }
+
+    button.mod-danger:not([disabled]):focus,
+    button.mod-danger:not([disabled]):hover {
+      background: linear-gradient(to bottom, @red-500 0%, @red-600 100%);
+      box-shadow: 0 2px 0 @red-900;
+      color: #fff;
+    }
+
+    button.mod-danger:not([disabled]):active {
+      background: linear-gradient(to bottom, @red-600 0%, @red-700 100%);
+      box-shadow: 0 2px 0 @red-900;
+      color: #fff;
+    }
+
   // Inline
 
   button.mod-inline {
