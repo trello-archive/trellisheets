@@ -2,16 +2,17 @@
 
 button {
   background: linear-gradient(to bottom, @light-gray-200 0%, @light-gray-300 100%);
+  border: 0;
   border-radius: .3em;
   box-shadow: 0 2px 0 @light-gray-800;
   color: hsl(0, 0%, 30%);
   display: inline-block;
   font-weight: bold;
   margin: .3em 1em 1em 0;
+  outline: 0;
   padding: .6em 1.4em;
   position: relative;
   text-decoration: none;
-  border: 0px;
 }
 
   button:not([disabled]):focus,
@@ -67,6 +68,8 @@ button[disabled] {
     font-size: .8em;
     padding: .3em .8em;
   }
+
+  // Full
 
   button.mod-full {
     width: 100%;
