@@ -1,0 +1,59 @@
+// Global Header
+
+.global-header {
+  background-color: @trello-blue-500;
+  color: #fff;
+  padding-top: 1em;
+  text-align: center;
+}
+
+  .global-header-nav {
+    background-color: @trello-blue-600;
+    text-align: center;
+  }
+
+    .global-header-nav-item {
+      color: #fff;
+      display: inline-block;
+      padding: .8em 1em;
+      vertical-align: top;
+      text-decoration: none;
+    }
+
+    a.global-header-nav-item:hover,
+    a.global-header-nav-item:visited,
+    a.global-header-nav-item.is-active {
+      background-color: @trello-blue-700;
+      color: #fff;
+    }
+
+    a.global-header-nav-item:active {
+      background-color: @trello-blue-800;
+      color: #fff;
+    }
+
+
+.global-header.mod-gray {
+  background-color: @light-gray-200;
+  color: @default-font-color;
+
+  .global-header-nav {
+    background-color: @light-gray-300;
+  }
+
+    .global-header-nav-item {
+      color: @default-font-color;
+    }
+
+    a.global-header-nav-item:hover,
+    a.global-header-nav-item:visited,
+    a.global-header-nav-item.is-active {
+      background-color: @light-gray-400;
+      color: @default-font-color;
+    }
+
+    a.global-header-nav-item:active {
+      background-color: @light-gray-500;
+      color: @default-font-color;
+    }
+}
