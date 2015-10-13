@@ -7,30 +7,50 @@
   text-align: center;
 }
 
+  .global-header-content {
+    padding: 2em 1em;
+  }
+
   .global-header-nav {
     background-color: @trello-blue-600;
     text-align: center;
   }
 
-    .global-header-nav-item {
-      color: #fff;
-      display: inline-block;
-      padding: .8em 1em;
-      vertical-align: top;
-      text-decoration: none;
+    .global-header-nav-list {
+      display: flex;
+      justify-content: center;
     }
 
-    a.global-header-nav-item:hover,
-    a.global-header-nav-item:visited,
-    a.global-header-nav-item.is-active {
-      background-color: @trello-blue-700;
-      color: #fff;
-    }
+      .global-header-nav-list-item {
+        color: #fff;
+        display: inline-block;
+        padding: .9em 1em;
+        vertical-align: top;
+        text-decoration: none;
+      }
 
-    a.global-header-nav-item:active {
-      background-color: @trello-blue-800;
-      color: #fff;
-    }
+      .global-header-nav-list-item.mod-input {
+        padding: .5em;
+      }
+
+        input.global-header-nav-list-item-input {
+          background-color: @trello-blue-50;
+          border-color: transparent !important;
+          color: @default-font-color;
+          margin: 0;
+        }
+
+      a.global-header-nav-list-item:hover,
+      a.global-header-nav-list-item:visited,
+      a.global-header-nav-list-item.is-active {
+        background-color: @trello-blue-700;
+        color: #fff;
+      }
+
+      a.global-header-nav-list-item:active {
+        background-color: @trello-blue-800;
+        color: #fff;
+      }
 
 
 .global-header.mod-gray {
@@ -41,19 +61,20 @@
     background-color: @light-gray-300;
   }
 
-    .global-header-nav-item {
+    .global-header-nav-list-item {
       color: @default-font-color;
     }
 
-    a.global-header-nav-item:hover,
-    a.global-header-nav-item:visited,
-    a.global-header-nav-item.is-active {
+    a.global-header-nav-list-item:hover,
+    a.global-header-nav-list-item:visited,
+    a.global-header-nav-list-item.is-active {
       background-color: @light-gray-400;
       color: @default-font-color;
     }
 
-    a.global-header-nav-item:active {
+    a.global-header-nav-list-item:active {
       background-color: @light-gray-500;
       color: @default-font-color;
     }
+
 }
