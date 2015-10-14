@@ -1,0 +1,126 @@
+// Global Header
+
+.global-header {
+  padding: 1em .75em 0;
+}
+
+  .global-header-section {
+    float: left;
+  }
+
+    .global-header-section-logo {
+      display: block;
+      height: 34px;
+
+      &:hover {
+        opacity: .8;
+      }
+
+      &:active {
+        opacity: .7;
+      }
+
+    }
+
+      .global-header-section-logo-image {
+        height: 100%;
+      }
+
+    .global-header-section-button {
+      background-color: @light-gray-100;
+      border-radius: .4em;
+      box-shadow: 0 2px 0 @light-gray-300;
+      color: @quiet-font-color;
+      display: inline-block;
+      font-size: .8em;
+      line-height: 1.3;
+      margin: 0 .25em;
+      padding: .7em 1.3em;
+      vertical-align: top;
+      text-decoration: none;
+
+      &:visited {
+        color: @quiet-font-color;
+      }
+
+      &:focus,
+      &:hover {
+        color: @quiet-font-color;
+        background-color: @light-gray-200;
+        box-shadow: 0 2px 0 @light-gray-400;
+      }
+
+      &:active {
+        color: @quiet-font-color;
+        background-color: @light-gray-300;
+        box-shadow: 0 2px 0 @light-gray-500;
+      }
+
+    }
+
+
+// Modifiers
+
+.global-header-section.mod-left {
+  float: left;
+}
+
+.global-header-section.mod-right {
+  float: right;
+}
+
+.global-header.mod-trello-blue {
+  background-color: @trello-blue-500;
+}
+
+.global-header.mod-dark-background {
+
+  .global-header-section-button {
+    background-color: hsla(0, 0%, 0%, 0.1);
+    box-shadow: 0 2px 0 hsla(0, 0%, 0%, 0.2);
+    color: #fff;
+
+    &:visited {
+      color: #fff;
+    }
+
+    &:focus,
+    &:hover {
+      color: #fff;
+      background-color: hsla(0, 0%, 0%, 0.2);
+      box-shadow: 0 2px 0 hsla(0, 0%, 0%, 0.3);
+    }
+
+    &:active {
+      color: #fff;
+      background-color: hsla(0, 0%, 0%, 0.3);
+      box-shadow: 0 2px 0 hsla(0, 0%, 0%, 0.4);
+    }
+
+  }
+
+}
+
+.global-header-section-button.mod-primary {
+  background: linear-gradient(to bottom, @green-500 0%, @green-600 100%);
+  box-shadow: 0 2px 0 @green-900;
+  color: #fff;
+
+  &:visited {
+    color: #fff;
+  }
+
+  &:focus,
+  &:hover {
+    color: #fff;
+    background: linear-gradient(to bottom, @green-600 0%, @green-700 100%);
+    box-shadow: 0 2px 0 @green-900;
+  }
+
+  &:active {
+    color: #fff;
+    background: linear-gradient(to bottom, @green-700 0%, @green-800 100%);
+    box-shadow: 0 2px 0 @green-900;
+  }
+
+}
