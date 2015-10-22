@@ -29,6 +29,10 @@
         height: 100%;
       }
 
+    .global-header-section-links {
+      display: inline;
+    }
+
     a.global-header-section-link {
       border-radius: .4em;
       color: @default-font-color;
@@ -183,4 +187,13 @@
     box-shadow: 0 2px 0 @green-900;
   }
 
+}
+
+
+// Media Queries
+
+@media @small {
+  .global-header-section-links {
+    display: none;
+  }
 }

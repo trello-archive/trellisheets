@@ -35,6 +35,7 @@
           background-color: @light-gray-50;
           border-color: transparent !important;
           color: @default-font-color;
+          display: inline;
           margin: 0;
         }
 
@@ -81,5 +82,24 @@
       input.page-header-nav-list-item-input {
         background-color: @trello-blue-50;
       }
+
+}
+
+
+// Media Queries
+
+@media @small {
+
+  .page-header-nav-list {
+    display: block;
+  }
+
+  .page-header-nav-list-item {
+    display: block;
+  }
+
+  .page-header-nav-list-item.mod-input {
+    margin: 0 auto;
+  }
 
 }
