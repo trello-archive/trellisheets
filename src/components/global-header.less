@@ -12,7 +12,7 @@
     .global-header-section-logo {
       display: block;
       float: left;
-      height: 42px;
+      height: 2em;
       margin-right: .75em;
 
       &:hover {
@@ -128,8 +128,8 @@
 .global-header.mod-dark-background {
 
   a.global-header-section-button {
-    background-color: hsla(0, 0%, 0%, 0.1);
-    box-shadow: 0 2px 0 hsla(0, 0%, 0%, 0.2);
+    background-color: hsla(0, 0%, 0%, .15);
+    box-shadow: 0 2px 0 hsla(0, 0%, 0%, .3);
     color: #fff;
 
     &:visited {
@@ -139,14 +139,14 @@
     &:focus,
     &:hover {
       color: #fff;
-      background-color: hsla(0, 0%, 0%, 0.2);
-      box-shadow: 0 2px 0 hsla(0, 0%, 0%, 0.3);
+      background-color: hsla(0, 0%, 0%, .25);
+      box-shadow: 0 2px 0 hsla(0, 0%, 0%, .4);
     }
 
     &:active {
       color: #fff;
-      background-color: hsla(0, 0%, 0%, 0.3);
-      box-shadow: 0 2px 0 hsla(0, 0%, 0%, 0.4);
+      background-color: hsla(0, 0%, 0%, .35);
+      box-shadow: 0 2px 0 hsla(0, 0%, 0%, .5);
     }
 
   }
@@ -169,6 +169,7 @@
   background: linear-gradient(to bottom, @green-500 0%, @green-600 100%);
   box-shadow: 0 2px 0 @green-900;
   color: #fff;
+  font-weight: bold;
 
   &:visited {
     color: #fff;
