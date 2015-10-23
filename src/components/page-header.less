@@ -15,20 +15,25 @@
   }
 
     .page-header-nav-list {
+      align-items: center;
       display: flex;
+      flex-direction: row;
       justify-content: center;
     }
 
       .page-header-nav-list-item {
         color: @default-font-color;
         display: inline-block;
-        padding: .9em 1em;
+        flex: 0 0 auto;
+        font-size: .9em;
+        padding: 1em;
         vertical-align: top;
         text-decoration: none;
       }
 
       .page-header-nav-list-item.mod-input {
         padding: .5em;
+        align-content: center;
       }
 
         input.page-header-nav-list-item-input {
@@ -37,6 +42,7 @@
           color: @default-font-color;
           display: inline;
           margin: 0;
+          padding: .5em;
         }
 
       a.page-header-nav-list-item:hover,
@@ -82,6 +88,39 @@
       input.page-header-nav-list-item-input {
         background-color: @trello-blue-50;
       }
+
+}
+
+
+// Modifiers
+
+.page-header-nav-list.mod-fixed-width {
+  justify-content: flex-start;
+  margin: 0 auto;
+  max-width: 1000px;
+
+  .page-header-nav-list-item.mod-input {
+    flex: 1 1 auto;
+    text-align: right;
+  }
+
+  input.page-header-nav-list-item-input {
+    max-width: 250px;
+  }
+
+}
+
+@media @small {
+
+  .page-header-nav-list.mod-fixed-width {
+    justify-content: center;
+
+    .page-header-nav-list-item.mod-input {
+      flex: none;
+      text-align: left;
+    }
+
+  }
 
 }
 
