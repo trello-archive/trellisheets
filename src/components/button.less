@@ -79,6 +79,22 @@ button[disabled] {
       color: #fff;
     }
 
+  // Quiet
+
+  button.mod-transparent {
+    background: hsla(0, 0%, 0%, 0.1);
+    box-shadow: none;
+  }
+
+    button.mod-transparent:not([disabled]):focus,
+    button.mod-transparent:not([disabled]):hover {
+      background: hsla(0, 0%, 0%, 0.2);
+    }
+
+    button.mod-transparent:not([disabled]):active {
+      background: hsla(0, 0%, 0%, 0.3);
+    }
+
   // Inline
 
   button.mod-inline {
