@@ -1,11 +1,21 @@
 // Button
 
+// There are a few types of buttons you can use: a <button> tag, a
+// <input type="submit">, and an <a class="button"> tag. They largely look the
+// same, but have different functions.
+// If clicking takes you to another page, use an <a> tag.
+// If clicking triggers something on the page via JavaScript, use a <button>.
+// If it submits a form, use <input type="submit">.
+
+.button,
+input[type="submit"],
 button {
   background: linear-gradient(to bottom, @light-gray-200 0%, @light-gray-300 100%);
   border: 0;
   border-radius: .3em;
   box-shadow: 0 2px 0 @light-gray-800;
   color: hsl(0, 0%, 30%);
+  cursor: pointer;
   display: inline-block;
   font-weight: bold;
   line-height: 1.2;
@@ -13,22 +23,41 @@ button {
   outline: 0;
   padding: .6em 1.4em;
   position: relative;
+  text-decoration: none;
 }
 
+  .button:focus,
+  .button:hover,
+  input[type="submit"]:focus,
+  input[type="submit"]:hover,
   button:not([disabled]):focus,
   button:not([disabled]):hover {
     background: linear-gradient(to bottom, @light-gray-300 0%, @light-gray-400 100%);
     color: hsl(0, 0%, 30%);
   }
 
+  .button:active,
+  input[type="submit"]:active,
   button:not([disabled]):active {
     background: linear-gradient(to bottom, @light-gray-400 0%, @light-gray-500 100%);
     color: hsl(0, 0%, 30%);
   }
 
 
+//// Ensure default link colors are overridden.
+
+.button:hover,
+.button:hover:visited,
+.button:visited {
+  color: inherit;
+}
+
+
 // States
 
+// There is no disabled state for <a> tags
+
+input[type="submit"][disabled],
 button[disabled] {
   background: @light-gray-200;
   box-shadow: none;
@@ -42,6 +71,11 @@ button[disabled] {
 
   // Primary
 
+  // For primary actions like confirming or saving. Generally, you should only
+  // have one primary action per form.
+
+  .button.mod-primary,
+  input[type="submit"].mod-primary,
   button.mod-primary {
     background: linear-gradient(to bottom, @green-500 0%, @green-600 100%);
     box-shadow: 0 2px 0 @green-900;
@@ -49,12 +83,18 @@ button[disabled] {
     padding: .6em 2em;
   }
 
+    .button.mod-primary:focus,
+    .button.mod-primary:hover,
+    input[type="submit"].mod-primary:focus,
+    input[type="submit"].mod-primary:hover,
     button.mod-primary:not([disabled]):focus,
     button.mod-primary:not([disabled]):hover {
       background: linear-gradient(to bottom, @green-600 0%, @green-700 100%);
       color: #fff;
     }
 
+    .button.mod-primary:active,
+    input[type="submit"].mod-primary:active,
     button.mod-primary:not([disabled]):active {
       background: linear-gradient(to bottom, @green-700 0%, @green-800 100%);
       color: #fff;
@@ -62,10 +102,18 @@ button[disabled] {
 
   // Danger
 
+  // For dangerous actions like deleting where there might be a way to go back.
+
+  .button.mod-danger,
+  input[type="submit"].mod-danger,
   button.mod-danger {
     color: @red-500;
   }
 
+    .button.mod-danger:focus,
+    .button.mod-danger:hover,
+    input[type="submit"].mod-danger:not([disabled]):focus,
+    input[type="submit"].mod-danger:not([disabled]):hover,
     button.mod-danger:not([disabled]):focus,
     button.mod-danger:not([disabled]):hover {
       background: linear-gradient(to bottom, @red-500 0%, @red-600 100%);
@@ -73,26 +121,34 @@ button[disabled] {
       color: #fff;
     }
 
+    .button.mod-danger:active,
+    input[type="submit"].mod-danger:not([disabled]):active,
     button.mod-danger:not([disabled]):active {
       background: linear-gradient(to bottom, @red-600 0%, @red-700 100%);
       box-shadow: 0 2px 0 @red-900;
       color: #fff;
     }
 
-  // Quiet
+  // Transparent
 
+  // Used within the page. Don’t use on forms or major call-outs.
+
+  .button.mod-transparent,
   button.mod-transparent {
-    background: hsla(0, 0%, 0%, 0.1);
+    background: hsla(0, 0%, 0%, .1);
     box-shadow: none;
   }
 
+    .button.mod-transparent:focus,
+    .button.mod-transparent:hover,
     button.mod-transparent:not([disabled]):focus,
     button.mod-transparent:not([disabled]):hover {
-      background: hsla(0, 0%, 0%, 0.2);
+      background: hsla(0, 0%, 0%, .15);
     }
 
+    .button.mod-transparent:active,
     button.mod-transparent:not([disabled]):active {
-      background: hsla(0, 0%, 0%, 0.3);
+      background: hsla(0, 0%, 0%, .2);
     }
 
   // Inline
@@ -106,6 +162,8 @@ button[disabled] {
 
   // Full
 
+  .button.mod-full,
+  input[type="submit"].mod-full,
   button.mod-full {
     width: 100%;
   }
@@ -115,6 +173,8 @@ button[disabled] {
 
 @media print {
 
+  .button,
+  input[type="submit"],
   button {
     border: 1px solid;
   }
