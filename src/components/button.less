@@ -2,7 +2,8 @@
 
 // There are a few types of buttons you can use: a <button> tag, a
 // <input type="submit">, and an <a class="button"> tag. They largely look the
-// same, but have different functions.
+// same, but have different functions…
+
 // If clicking takes you to another page, use an <a> tag.
 // If clicking triggers something on the page via JavaScript, use a <button>.
 // If it submits a form, use <input type="submit">.
@@ -10,11 +11,11 @@
 .button,
 input[type="submit"],
 button {
-  background: linear-gradient(to bottom, @light-gray-200 0%, @light-gray-300 100%);
+  background: linear-gradient(to bottom, @light-gray-100 0%, @light-gray-200 100%);
   border: 0;
   border-radius: .3em;
-  box-shadow: 0 2px 0 @light-gray-800;
-  color: hsl(0, 0%, 30%);
+  box-shadow: 0 2px 0 @light-gray-700;
+  color: @default-font-color;
   cursor: pointer;
   display: inline-block;
   font-weight: bold;
@@ -32,17 +33,16 @@ button {
   input[type="submit"]:hover,
   button:not([disabled]):focus,
   button:not([disabled]):hover {
-    background: linear-gradient(to bottom, @light-gray-300 0%, @light-gray-400 100%);
-    color: hsl(0, 0%, 30%);
+    background: linear-gradient(to bottom, @light-gray-200 0%, @light-gray-300 100%);
+    color: @default-font-color;
   }
 
   .button:active,
   input[type="submit"]:active,
   button:not([disabled]):active {
-    background: linear-gradient(to bottom, @light-gray-400 0%, @light-gray-500 100%);
-    color: hsl(0, 0%, 30%);
+    background: linear-gradient(to bottom, @light-gray-300 0%, @light-gray-400 100%);
+    color: @default-font-color;
   }
-
 
 //// Ensure default link colors are overridden.
 
@@ -59,7 +59,7 @@ button {
 
 input[type="submit"][disabled],
 button[disabled] {
-  background: @light-gray-200;
+  background: @light-gray-100;
   box-shadow: none;
   color: @quiet-font-color;
   cursor: default;
@@ -100,6 +100,7 @@ button[disabled] {
       color: #fff;
     }
 
+
   // Danger
 
   // For dangerous actions like deleting where there might be a way to go back.
@@ -129,26 +130,67 @@ button[disabled] {
       color: #fff;
     }
 
+
   // Transparent
 
-  // Used within the page. Don’t use on forms or major call-outs.
+  // Used within the page on sections with a non-white background.
+  // Don’t use on forms or major call-outs.
 
   .button.mod-transparent,
   button.mod-transparent {
-    background: hsla(0, 0%, 0%, .1);
-    box-shadow: none;
+    background: fadeout(@light-gray-500, 70%);
+    box-shadow: 0 1px fadeout(@light-gray-800, 30%);
+    color: hsla(0, 0%, 0%, .7);
+    font-weight: normal;
   }
 
     .button.mod-transparent:focus,
     .button.mod-transparent:hover,
     button.mod-transparent:not([disabled]):focus,
     button.mod-transparent:not([disabled]):hover {
-      background: hsla(0, 0%, 0%, .15);
+      background: fadeout(@light-gray-500, 60%);
+      box-shadow: 0 1px fadeout(@light-gray-800, 40%);
+      color: hsla(0, 0%, 0%, .9);
     }
 
     .button.mod-transparent:active,
     button.mod-transparent:not([disabled]):active {
-      background: hsla(0, 0%, 0%, .2);
+      background: fadeout(@light-gray-500, 50%);
+      box-shadow: 0 1px fadeout(@light-gray-800, 50%);
+      color: hsl(0, 0%, 0%);
+    }
+
+  // If on a white background, don't use any additional modifiers.
+
+  // If on a darker, more saturated background where white text is used,
+  // add .mod-dark-background.
+
+  .button.mod-transparent.mod-dark-background,
+  button.mod-transparent.mod-dark-background {
+    color: #fff !important;
+    box-shadow: 0 1px hsla(0, 0%, 0%, 10%) !important;
+  }
+
+  // If on a lighter, off-white background where dark text is still used,
+  // add .mod-light-background.
+
+  .button.mod-transparent.mod-light-background,
+  button.mod-transparent.mod-light-background {
+    background: fadeout(@light-gray-50, 10%);
+    box-shadow: 0 1px fadeout(@light-gray-800, 70%);
+  }
+
+    .button.mod-transparent.mod-light-background:focus,
+    .button.mod-transparent.mod-light-background:hover,
+    button.mod-transparent.mod-light-background:not([disabled]):focus,
+    button.mod-transparent.mod-light-background:not([disabled]):hover {
+      background: fadeout(@light-gray-50, 0%);
+      box-shadow: 0 1px fadeout(@light-gray-800, 60%);
+    }
+
+    .button.mod-transparent.mod-light-background:active,
+    button.mod-transparent.mod-light-background:not([disabled]):active {
+      background: #fff;
     }
 
   // Inline
@@ -159,6 +201,7 @@ button[disabled] {
     font-size: .8em;
     padding: .3em .8em;
   }
+
 
   // Full
 
