@@ -1,0 +1,142 @@
+// Two Up Sections
+
+// Section in the page with an image on the left and text on the right (or vice
+// versa). The default is to have the image on the left, but there is a
+// modifier to put the image on the right. There are some modifiers for
+// background and text colors and image positioning. (Just use <div>s for these
+// sections, not <sections>s.) You’ll generally want to use
+// `.button.mod-transparent`
+
+
+.layout-two-up {
+  overflow: hidden;
+  padding: 2em 0;
+}
+
+  .layout-two-up-content {
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+
+    // Only include <img>s inside this.
+
+    .layout-two-up-content-image {
+      flex: 1 0;
+      order: 1;
+      padding: 0 1em;
+      max-width: 585px;
+      direction: rtl;
+    }
+
+      // The actual image element.
+
+      .layout-two-up-content-image-img {
+        border-radius: 3px;
+        max-height: 500px;
+      }
+
+    // This says text, but it can be any element: buttons, small images,
+    // paragraphs, etc.
+
+    .layout-two-up-content-text {
+      flex: 1 0;
+      order: 2;
+      padding: 0 1em;
+      max-width: 585px;
+    }
+
+
+// Modifiers
+
+  // Vertically align top
+
+  .layout-two-up.mod-vertical-align-top {
+
+    .layout-two-up-content {
+      align-items: flex-start;
+    }
+
+    .layout-two-up-content-image-img {
+      margin-top: 1em;
+    }
+
+  }
+
+  // If you want the image on the right and text on the left.
+
+  .layout-two-up.mod-image-right {
+
+    .layout-two-up-content-image {
+      direction: ltr;
+      order: 3;
+    }
+
+  }
+
+  // Colors
+
+  // You’ll add background colors in your components, but here are some
+  // defaults.
+
+  .layout-two-up.mod-background-blue-100 {
+    background-color: @trello-blue-100;
+  }
+
+  .layout-two-up.mod-background-blue-500 {
+    background-color: @trello-blue-500;
+  }
+
+  // Use .mod-white-text on darker, more saturated backgrounds.
+
+  .layout-two-up.mod-white-text {
+    color: #fff;
+
+    a:not(.button) {
+      color: #fff;
+      opacity: .8;
+
+      &:focus,
+      &:hover {
+        opacity: .9;
+      }
+
+      &:active {
+        opacity: 1;
+      }
+
+    }
+
+  }
+
+
+// Media Queries
+
+@media print, screen and (max-width: 1200px) {
+
+  .layout-two-up-content {
+    flex-direction: column;
+    padding: 0 1em;
+  }
+
+    .layout-two-up-content-image {
+      max-width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .layout-two-up-content-image-img {
+      margin-bottom: 1em;
+      max-width: 100%;
+    }
+
+    .layout-two-up-content-text {
+      order: 4;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+}
