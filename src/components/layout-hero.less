@@ -1,0 +1,68 @@
+// Hero
+
+// Have a big, centered image to feature? Use .layout-hero.
+
+.layout-hero {
+  padding: 1em;
+  text-align: center;
+}
+
+  // You can have text sections above and/or below the image.
+  // Center text by adding `.mod-center` to this.
+
+  .layout-hero-text {
+    margin: 0 auto;
+    max-width: 700px;
+    padding: 1em 0;
+    text-align: left;
+  }
+
+  // For use on an <img> tag.
+
+  .layout-hero-image {
+    border-radius: 4px;
+    margin: 1em auto;
+    max-width: 100%;
+  }
+
+
+// Modifiers
+
+.layout-hero.mod-trello-blue-500 {
+  background: @trello-blue-500;
+}
+
+.layout-hero.mod-white-text {
+  color: #fff;
+
+  a:not(.button) {
+    color: #fff;
+    opacity: .8;
+
+    &:focus,
+    &:hover {
+      opacity: .9;
+    }
+
+    &:active {
+      opacity: 1;
+    }
+
+  }
+
+}
+
+.layout-hero-text.mod-center {
+  text-align: center;
+}
+
+
+// Media Queries
+
+@media @small {
+
+  .layout-hero-text {
+    max-width: 600px;
+  }
+
+}
