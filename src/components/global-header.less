@@ -45,7 +45,7 @@
       display: inline-block;
       float: left;
       font-size: .8em;
-      line-height: 1.3;
+      line-height: 1.1em;
       margin: 0 .2em 0 0;
       opacity: .6;
       padding: .7em .9em;
@@ -72,13 +72,16 @@
     }
 
     a.global-header-section-button {
+      // What's with the padding and height?
+      // the padding and line-height multiplied by the font-size is the height
+      // of the global header, or in math: `(.7 + .7 + 1.1) * .8 = 2em`
       background-color: @light-gray-200;
       border-radius: .4em;
       box-shadow: 0 2px 0 @light-gray-400;
       color: @default-font-color;
       display: inline-block;
       font-size: .8em;
-      line-height: 1.3;
+      line-height: 1.1em;
       margin: 0 .25em;
       padding: .7em 1.3em;
       text-decoration: none;
