@@ -45,8 +45,12 @@
           padding: .5em;
         }
 
+      a.page-header-nav-list-item:visited {
+        background-color: none;
+        color: @default-font-color;
+      }
+
       a.page-header-nav-list-item:hover,
-      a.page-header-nav-list-item:visited,
       a.page-header-nav-list-item.is-active {
         background-color: @light-gray-200;
         color: @default-font-color;
@@ -72,8 +76,11 @@
       color: #fff;
     }
 
+      a.page-header-nav-list-item:visited {
+        color: #fff;
+      }
+
       a.page-header-nav-list-item:hover,
-      a.page-header-nav-list-item:visited,
       a.page-header-nav-list-item.is-active {
         background-color: @trello-blue-700;
         color: #fff;
@@ -91,9 +98,6 @@
 
 }
 
-
-// Modifiers
-
 .page-header-nav-list.mod-fixed-width {
   justify-content: flex-start;
   margin: 0 auto;
@@ -110,6 +114,9 @@
 
 }
 
+
+// Media Queries
+
 @media @small {
 
   .page-header-nav-list.mod-fixed-width {
@@ -121,13 +128,6 @@
     }
 
   }
-
-}
-
-
-// Media Queries
-
-@media @small {
 
   .page-header-nav-list {
     display: block;
