@@ -161,8 +161,8 @@ button[disabled] {
 
   a.button.mod-transparent.mod-dark-background,
   button.mod-transparent.mod-dark-background {
-    color: #fff !important;
-    box-shadow: 0 1px hsla(0, 0%, 0%, 10%) !important;
+    color: #fff;
+    box-shadow: 0 1px hsla(0, 0%, 0%, 10%);
   }
 
   // If on a lighter, off-white background where dark text is still used,
@@ -213,7 +213,8 @@ button[disabled] {
   a.button,
   input[type="submit"],
   button {
-    border: 1px solid;
+    border: 1px solid @default-font-color;
+    color: @default-font-color;
   }
 
 }
