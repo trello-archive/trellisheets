@@ -23,7 +23,7 @@ button {
   line-height: 1.2;
   margin: .3em 1em 1em 0;
   outline: 0;
-  padding: .6em 1.2em;
+  padding: .7em 1.2em;
   position: relative;
   text-decoration: none;
 }
@@ -74,7 +74,8 @@ button[disabled] {
     background: linear-gradient(to bottom, @green-500 0%, @green-600 100%);
     box-shadow: 0 2px 0 @green-900;
     color: #fff;
-    padding: .6em 1.8em;
+    padding-left: 1.8em;
+    padding-right: 1.8em;
   }
 
     a.button.mod-primary:focus,
@@ -178,13 +179,13 @@ button[disabled] {
     a.button.mod-transparent.mod-light-background:hover,
     button.mod-transparent.mod-light-background:not([disabled]):focus,
     button.mod-transparent.mod-light-background:not([disabled]):hover {
-      background: fadeout(@light-gray-50, 0%);
+      background: #fff;
       box-shadow: 0 1px fadeout(@light-gray-800, 60%);
     }
 
     a.button.mod-transparent.mod-light-background:active,
     button.mod-transparent.mod-light-background:not([disabled]):active {
-      background: #fff;
+      background: fadeout(@light-gray-50, 0%);
     }
 
   // Inline
@@ -205,6 +206,13 @@ button[disabled] {
     width: 100%;
   }
 
+  // No Margin
+
+  a.button.mod-no-margin,
+  input[type="submit"].mod-no-margin,
+  button.mod-no-margin {
+    margin: 0;
+  }
 
 // Media Queries
 
