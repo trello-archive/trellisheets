@@ -3,19 +3,67 @@
 // When you just need to center some text for a simple page.
 
 .layout-centered {
-  margin: 0 auto;
-  max-width: 650px;
   padding: 3em 1em;
   word-break: break-word;
 }
+
+  .layout-centered-content {
+    margin: 0 auto;
+    max-width: 650px;
+  }
+
+  // When you want to break out a big image in the middle of the section.
+  // Add _outside_ `.layout-centered-content`.
+
+  .layout-centered-big-image {
+    margin: 2em 0;
+    text-align: center;
+  }
+
+    // Use on <img> tag
+    .layout-centered-big-image-img {
+      border-radius: 4px;
+      max-width: 100%;
+    }
+
+
+// Modifiers
+
+.layout-centered.mod-white-text {
+  color: #fff;
+
+  a:not(.button) {
+    color: #fff;
+    opacity: .8;
+
+    &:focus,
+    &:hover {
+      opacity: .9;
+    }
+
+    &:active {
+      opacity: 1;
+    }
+
+  }
+
+}
+
 
 // Media Queries
 
 @media @small {
 
   .layout-centered {
-    max-width: 600px;
     padding: 1em;
+  }
+
+  .layout-centered-content {
+    max-width: 600px;
+  }
+
+  .layout-centered-big-image {
+    margin: 1em 0;
   }
 
 }

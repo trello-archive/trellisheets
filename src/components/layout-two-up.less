@@ -32,7 +32,7 @@
       direction: rtl;
     }
 
-      // The actual image element.
+      // The image element.
 
       .layout-two-up-content-image-img {
         border-radius: 3px;
@@ -43,7 +43,7 @@
     // paragraphs, etc.
 
     .layout-two-up-content-text {
-      flex: 1 0;
+      flex: 2 0;
       order: 2;
       padding: 0 1em;
       max-width: 585px;
@@ -117,6 +117,14 @@
 
 @media print, screen and (max-width: 1200px) {
 
+  .layout-two-up.mod-vertical-align-top {
+
+    .layout-two-up-content {
+      align-items: center;
+    }
+
+  }
+
   .layout-two-up-content {
     flex-direction: column;
     padding: 0 1em;
@@ -137,6 +145,18 @@
       order: 4;
       padding-left: 0;
       padding-right: 0;
+      max-width: 650px;
     }
+
+}
+
+@media screen and (max-width: 900px) {
+
+  .layout-two-up-content-text {
+    order: 4;
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 600px;
+  }
 
 }
