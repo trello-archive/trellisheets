@@ -171,7 +171,7 @@ button[disabled] {
 
   a.button.mod-transparent.mod-light-background,
   button.mod-transparent.mod-light-background {
-    background: fadeout(@light-gray-50, 10%);
+    background: #fff;
     box-shadow: 0 1px fadeout(@light-gray-800, 70%);
   }
 
@@ -179,13 +179,14 @@ button[disabled] {
     a.button.mod-transparent.mod-light-background:hover,
     button.mod-transparent.mod-light-background:not([disabled]):focus,
     button.mod-transparent.mod-light-background:not([disabled]):hover {
-      background: #fff;
-      box-shadow: 0 1px fadeout(@light-gray-800, 60%);
+      background: hsla(0, 0%, 100%, .7);
+      box-shadow: 0 1px fadeout(@light-gray-800, 80%);
     }
 
     a.button.mod-transparent.mod-light-background:active,
     button.mod-transparent.mod-light-background:not([disabled]):active {
-      background: fadeout(@light-gray-50, 0%);
+      background: hsla(0, 0%, 100%, .5);
+      box-shadow: 0 1px fadeout(@light-gray-800, 90%);
     }
 
   // Inline
