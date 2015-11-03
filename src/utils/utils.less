@@ -21,3 +21,20 @@
 .u-center-text {
   text-align: center;
 }
+
+.u-quiet {
+  color: @quiet-font-color;
+
+  a,
+  a:visited {
+    color: @quiet-font-color;
+
+    &:focus,
+    &:hover,
+    &:active {
+      color: @default-font-color;
+    }
+
+  }
+
+}
