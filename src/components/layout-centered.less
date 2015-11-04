@@ -24,10 +24,24 @@
     .layout-centered-big-image-img {
       border-radius: 4px;
       max-width: 100%;
+      vertical-align: top;
     }
 
 
 // Modifiers
+
+.layout-centered.mod-hero-image-bottom {
+  padding-bottom: 0;
+
+  .layout-centered-big-image {
+    margin-bottom: 0;
+  }
+
+    .layout-centered-big-image-img {
+      border-radius: 4px 4px 0 0;
+    }
+
+}
 
 .layout-centered.mod-white-text {
   color: #fff;
