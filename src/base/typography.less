@@ -55,22 +55,32 @@ blockquote {
 // Pre / Code
 
 pre {
-  border: 1px solid @light-gray-300;
+  border: 1px solid @light-gray-200;
   background-color: @light-gray-100;
   border-radius: .4em;
   font-size: .8em;
+  overflow: auto;
   padding: .6em .8em;
+  word-wrap: normal;
 }
 
 code {
-  background: @light-gray-100;
+  background-color: @light-gray-100;
+  border: 1px solid @light-gray-200;
+  border-radius: .2em;
+  color: @red-400;
   font-family: "fira-mono", monospace;
-  padding: 0 .4em;
+  padding: 0 .3em;
+  margin: 0 .1em;
   border-radius: .2em;
 }
 
   pre > code {
-    background: transparent;
+    background-color: none;
+    border: none;
+    border-radius: 0;
+    color: @default-font-color;
+    margin: 0;
     padding: 0;
   }
 
