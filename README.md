@@ -12,7 +12,7 @@ structure and import files.
 
 ## Should I use these styles for the web client?
 
-The web client does’t use the base styles and components provided here, but it
+The web client doesn't use the base styles and components provided here, but it
 does stick to the style guide (please read it). These styles should be used as
 a starting point for almost everything else: blogs, landing pages, etc.
 
