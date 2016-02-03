@@ -10,6 +10,7 @@ There are eight _fascinating_ parts.
     - [State](#state)
     - [Media Queries](#media-queries)
     - [Keeping It Encapsulated](#keeping-it-encapsulated)
+    - [Structure](#structure)
 3. [JavaScript](#3-javascript)
 4. [Mixins](#4-mixins)
 5. [Utilities](#5-utilities)
@@ -249,9 +250,22 @@ Put media rules at the bottom of the component file.
 
 ## Keeping It Encapsulated
 
-Components can control a large part of the layout or just a button. In your templates, you’ll likely end up with parts of one component inside another component, like a `.button` inside a `.member-list`. We need to change the button’s size and positioning to fit the list.
+Components can be large parts of the layout or just a button. In your templates, you'll likely end up with components inside each other, like a button inside a list.
 
-This is tricky. Components shouldn’t know anything about each other. If the smaller button can be reused in multiple places, add a modifier in the button component (like, `.button.mod-small`) and use it in member-list. Do the positioning with a member list component with a descendant, since that’s specific to the member list and not the button.
+Components shouldn’t know anything about each other and should be reusable in other places. Everything you need to know about the component should be in the file. Inversely, you shouldn’t overwrite or include component styles in other components. This has a lot of advantages:
+
+1. You can see everything about the component in the file.
+2. You don’t have to worry about other components overriding a style.
+3. You can reuse the component elsewhere.
+4. Components are small and readable.
+
+-----
+
+As an example, you should keep list and item components separate. For a list of boards, you’ll want to separate `board-list.less`, which defines the grid and layout, from `board-tile.less`, which defines the board styles within. With all the modifiers, states, and media queries, this keeps file size down, which in turn makes it more readable. This also allows us to reuse the board tile component elsewhere.
+
+-----
+
+Now a more complex example. You may reuse the `button` component inside the `member-list` component. We need to change the button’s size and positioning to fit the list. The smaller button can be reused in multiple places, so we’ll add a modifier in the button component (like, `.button.mod-small`), which we’ll use in member-list (and elsewhere). Now we do the positioning within the member list component, since that’s specific to the member list.
 
 Here’s an example:
 
@@ -302,7 +316,7 @@ Here’s an example:
     }
 ```
 
-A _bad_ thing to do would be this:
+A _bad, no good_ thing to do would be this:
 
 ``` HTML
 <!-- HTML -->
@@ -324,9 +338,81 @@ A _bad_ thing to do would be this:
 }
 ```
 
-In the _bad_ example, `.member-list-item-button` overrides styles specific to the button component. It assumes things about button that it shouldn’t have to know anything about. It also prevents us from reusing the small button style and makes it hard to clean or change up later if needed.
+In the _bad, no good_ example, `.member-list-item-button` overrides styles specific to the button component. It assumes things about button that it shouldn’t have to know anything about. It also prevents us from reusing the small button style and makes it hard to clean or change up later if needed.
 
-You should end up with a lot of components. Always be asking yourself if everything inside a component is absolutely related and can’t be broken down into more components. If you start to have a lot of modifiers and descendants, it might be time to break it up.
+You should end up with a lot of components. That’s encouraged. Always be asking yourself if everything inside a component is absolutely related and can’t be broken down into more components. If you start to have a lot of modifiers and descendants, it might be time to break it up. As a general rule, you should break up components that are **longer than 300 lines**.
+
+## Structure
+
+Structure your component like so…
+
+1. The name, location, usage and notes in the comments
+2. Base components with descendants
+3. Modifiers (if any)
+4. States (if any). States came after modifiers since you may need to overwrite styles.
+5. Media Queries (if any)
+
+An example:
+
+``` LESS
+// Component (The name)
+
+// Used in the main section of the app. (Where it’s used.)
+
+// Usage:
+// <div class="component">
+//   <p class="component-decendant">
+//     <span class="component-decendant-descendant"></span>
+//   </p>
+// </div>
+//
+// (How it's used.)
+
+// Put any other notes here, too.
+
+.component {
+  /* … */
+}
+
+  .component-descendant {
+    /* … */
+  }
+
+    .component-descendant-descendant {
+      /* … */
+    }
+
+
+// Modifiers
+
+.component.mod-small {
+  /* … */
+}
+
+
+// State
+
+.component.is-highlighted {
+  /* … */
+}
+
+.component.mod-small.is-highlighted {
+  /* … */
+}
+
+
+// Media Queries
+
+@media @small {
+
+  .component {
+    width: 100%;
+  }
+
+}
+
+
+```
 
 
 ## 3. JavaScript
@@ -397,9 +483,12 @@ Sometimes we need a universal class that can be used in any component. Things li
 }
 ```
 
-All the utils should be in a single file. There shouldn’t be any need to overwrite them in components or mixins.
+A few utility rules:
 
-You should really only need a few utilities. We don’t need something like `.u-float-left { float: left; }` where including `float: left;` in the component is just as easy and more visible.
+1. No utility class should be so complex that it includes nesting styles.
+2. Utilities should never be overwritten or included in components or mixins.
+3. Use of utility classes should be limited. Include the styles in the components when possible. We don’t need something like `.u-float-left { float: left; }` where including `float: left;` in the component is more visible.
+4. You should be able to fit all the utility classes in a single file.
 
 
 ## 6. File Structure
@@ -412,26 +501,33 @@ The file will look something like this:
 @import "normalize.css"
 
 // Variables
-@import "media-queries.less"
-@import "colors.less"
-@import "other-variables-like-fonts.less"
+@import "variables/media-queries.less"
+@import "variables/colors.less"
+@import "variables/other-variables-like-fonts.less"
 
 // Mixins
-@import "mixins.less"
+@import "mixins/mixins.less"
 
 // Utils
-@import "utils.less"
+@import "utils/utils.less"
+
 
 // Components
-@import "component-1.less"
-@import "component-2.less"
-@import "component-3.less"
-@import "component-4.less" // and so forth
+
+// Board Components
+@import "components/board/board-component-1.less"
+@import "components/board/board-component-2.less"
+
+// Header Components
+@import "components/header/header-component-1.less"
+@import "components/header/header-component-2.less" // and so forth
+
+
 ```
 
 Include [normalize.css](http://necolas.github.io/normalize.css/) at the top of the file. It standardizes CSS defaults across browsers. You should use it in all projects. Then include variables, mixins, and utils (respectively).
 
-Then include the components. Each component should have its own file and include all the necessary modifiers, states, and media queries. If we write components correctly, the order should not matter.
+Then include the components. Each component should have its own file and include all the necessary modifiers, states, and media queries. If components are well encapsulated, the order should not matter. Break up components into logical folders by section.
 
 This should output a single `app.css` file (or something similarly named).
 
@@ -463,6 +559,7 @@ It sticks to these style rules:
 - Use shorthand when appropriate, like `padding: 15px 0;` and not `padding: 15px 0px 15px 0px;`.
 -	When using vendor prefixed features, put the standard declaration last. For example: `-webkit-transition: all 100ms; transition: all 100ms;`. (Note: Browsers will optimize the standard declaration, but continue to keep the old one around for compatibility. Putting the standard declaration after the vendor one means it will get used and you get the most optimized version.)
 -	Prefer hsl(a) over hex and rgb(a). Working with colors in code is easier with hsl, especially when making things lighter or darker, since you only have one variable to adjust.
+- Keep lines under 80 characters long.
 
 
 ## 8. Miscellany
@@ -471,6 +568,7 @@ You might get the impression from this guide that our CSS is in great shape. Tha
 
 Some additional things to keep in mind:
 
+- Provide markup examples in comments in the header of your component file. The namespacing should help, but examples are more clear.
 - Comments rarely hurt. If you find an answer on Stack Overflow or in a blog post, add the link to a comment so future people know what’s up. It’s good to explain the purpose of the file in a comment at the top.
 - In your markup, order classes like so `<div class="component mod util state js"></div>`.
 - You can embed common images and files under 10kb using datauris. In the Trello web client, you can use `embed(/path/to/file)` to do this. This saves a request, but adds to the CSS size, so only use it on extremely common things like the logo.
