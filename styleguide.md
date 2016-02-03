@@ -18,6 +18,7 @@ There are eight _fascinating_ parts.
 7. [Style](#7-style)
 8. [Miscellany](#8-miscellany)
     - [Performance](#performance)
+9. [Further Reading](#9-further-reading)
 
 
 ## 1. Tools
@@ -543,7 +544,6 @@ Even following the above guidelines, it’s still possible to write CSS in a ton
   display: block;
   float: left;
   padding: 8px 12px;
-  -webkit-transition: background 100ms;
   transition: background 100ms;
 }
 ```
@@ -557,9 +557,13 @@ It sticks to these style rules:
 -	Use 2 spaces to indent, not 4 spaces and not tabs.
 -	No underscores or camelCase for selectors.
 - Use shorthand when appropriate, like `padding: 15px 0;` and not `padding: 15px 0px 15px 0px;`.
--	When using vendor prefixed features, put the standard declaration last. For example: `-webkit-transition: all 100ms; transition: all 100ms;`. (Note: Browsers will optimize the standard declaration, but continue to keep the old one around for compatibility. Putting the standard declaration after the vendor one means it will get used and you get the most optimized version.)
--	Prefer hsl(a) over hex and rgb(a). Working with colors in code is easier with hsl, especially when making things lighter or darker, since you only have one variable to adjust.
-- Keep lines under 80 characters long.
+-	Generally, use the brand color variables. When using a color, especially grayscale tones, prefer hsl(a) over hex and rgb(a) when adding colors. It’s easier to adjust the lightness or darkness, since you only have one variable to tweak.
+- No trailing whitespace.
+- Keep line length under 80 characters.
+
+Many of these are preferences, but standardizing makes reading code easier.
+
+Note: Since we use [autoprefixer](https://github.com/postcss/autoprefixer), we don't have to worry about writing browser prefixed declarations, like `-webkit-feature`. If you are not using prefixer on your project, then put the standard declaration last. For example: `-webkit-transition: all 100ms; transition: all 100ms;`. Browsers will optimize the standard declaration, but continue to keep the old one around for compatibility. Putting the standard declaration after the vendor one means it will get used and you get the most optimized version.
 
 
 ## 8. Miscellany
@@ -568,19 +572,12 @@ You might get the impression from this guide that our CSS is in great shape. Tha
 
 Some additional things to keep in mind:
 
-- Provide markup examples in comments in the header of your component file. The namespacing should help, but examples are more clear.
 - Comments rarely hurt. If you find an answer on Stack Overflow or in a blog post, add the link to a comment so future people know what’s up. It’s good to explain the purpose of the file in a comment at the top.
 - In your markup, order classes like so `<div class="component mod util state js"></div>`.
 - You can embed common images and files under 10kb using datauris. In the Trello web client, you can use `embed(/path/to/file)` to do this. This saves a request, but adds to the CSS size, so only use it on extremely common things like the logo.
 - Avoid body classes. There is rarely a need for them. Stick to modifiers within your component.
 - Explicitly write out class names in selectors. Don’t concatenate strings or use preprocessor trickery to build a class name. We want to be able to search for class names and that makes it impossible. This goes for `.js-` classes in JavaScript, too.
 - If you are worried about long selector names making our CSS huge, don’t be. Compression makes this a moot point.
-
-Some additional reading on CSS architecture around the web:
-
-- [Medium’s CSS guidelines.](https://gist.github.com/fat/a47b882eb5f84293c4ed) I ~~stole~~ learned a lot from this.
-- [“CSS At…” from CSS Tricks](http://css-tricks.com/css/). This is a big list of CSS practices at various companies.
-- The BEM, or “block, element, modifier”, methodology is similar to our components. It is well explained in [this CSS Wizardry article](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/).
 
 
 ### Performance
@@ -594,3 +591,14 @@ Selector performance seems to matters less and less these days, but can be a pro
 You shouldn’t have to worry about selector performance if you use components correctly. It will keep specificity about as low as it gets.
 
 Layouts and paints can cause lots of performance damage. Be cautious with CSS3 features like text-shadow, box-shadow, border-radius, and animations, [especially when used together](http://www.html5rocks.com/en/tutorials/speed/css-paint-times/). We wrote a big blog post about performance [back in January 2014](http://blog.fogcreek.com/we-spent-a-week-making-trello-boards-load-extremely-fast-heres-how-we-did-it/). Much of this was due to layout thrashing caused by JavaScript, but we cut out some heavy styles like borders, gradients, and shadows, which helped a lot.
+
+
+## 9. Further Reading
+
+This styleguide was influenced by discussions about CSS around the web. Here’s some additional reading on CSS architecture, which might be helpful:
+
+- [Medium’s CSS guidelines.](https://gist.github.com/fat/a47b882eb5f84293c4ed) I ~~stole~~ learned a lot from this.
+- The BEM, or “block, element, modifier”, methodology is similar to our components. It is well explained in [this CSS Wizardry article](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/).
+- [RSCSS](http://rscss.io/index.html)
+- [18F CSS Coding Styleguide](https://pages.18f.gov/frontend/css-coding-styleguide/)
+- [“CSS At…” from CSS Tricks](http://css-tricks.com/css/). A big list of CSS practices at various companies.
