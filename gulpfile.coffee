@@ -1,7 +1,6 @@
 gulp = require 'gulp'
 path = require 'path'
 gutil = require 'gulp-util'
-concat = require 'gulp-concat'
 less = require 'gulp-less'
 minifyCSS = require 'gulp-minify-css'
 rename = require 'gulp-rename'
@@ -37,4 +36,4 @@ gulp.task 'styles', ->
 gulp.task 'watch', ->
   gulp.watch './src/**/*', ['styles']
 
-gulp.task 'default', ['styles', 'watch']
+gulp.task 'default', ['styles']
