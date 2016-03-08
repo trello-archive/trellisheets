@@ -277,7 +277,7 @@ Here’s an example:
   <div class="member-list-item">
     <p class="member-list-item-name">Gumby</p>
     <div class="member-list-item-action">
-      <a href="#" class="button mod-small">Add</a>
+      <button class="mod-small">Add</button>
     </div>
   </div>
 </div>
@@ -286,13 +286,13 @@ Here’s an example:
 ``` LESS
 // button.less
 
-.button {
+button {
   background: #fff;
   border: 1ps solid #999;
   padding: 8px 12px;
 }
 
-.button.mod-small {
+button.mod-small {
   padding: 6px 10px;
 }
 
@@ -325,7 +325,7 @@ A _bad, no good_ thing to do would be this:
 <div class="member-list">
   <div class="member-list-item">
     <p class="member-list-item-name">Pat</p>
-    <a href="#" class="member-list-item-button button">Add</a>
+    <button class="member-list-item-button">Add</button>
   </div>
 </div>
 ```
