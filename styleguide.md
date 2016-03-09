@@ -288,7 +288,7 @@ Here’s an example:
 
 button {
   background: #fff;
-  border: 1ps solid #999;
+  border: 1px solid #999;
   padding: 8px 12px;
 }
 
