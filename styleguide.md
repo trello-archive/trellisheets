@@ -582,7 +582,7 @@ Some additional things to keep in mind:
 
 ### Performance
 
-Performance probably deserves it’s own guide, but I’ll talk about two big concepts: selector performance and layouts/paints.
+Performance probably deserves its own guide, but I’ll talk about two big concepts: selector performance and layouts/paints.
 
 Selector performance seems to matters less and less these days, but can be a problem in a complex, single-page app with thousands of DOM elements (like Trello). [The CSS Tricks article about selector performance](http://css-tricks.com/efficiently-rendering-css/) should help explain the important concept of the key selector. Seemingly specific rules like `.component-descendant-descendant div` are actual quite expensive in complex apps because rules are read _from right to left_. It needs to look up all the divs first (which could be thousands) then go up the DOM from there.
 
