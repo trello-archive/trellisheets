@@ -455,7 +455,7 @@ Mixins are shared styles that are used in more than one component. Mixins should
 
 Previously, we used mixins for browser prefixed features, but we use [autoprefixer](https://www.npmjs.com/package/autoprefixer) for that now.
 
-When using a mixin, it should include the parenthesis to make it more obvious that it’s a mixin. Example usage:
+When using a mixin, it should include the parentheses to make it more obvious that it’s a mixin. Example usage:
 
 ``` LESS
 // mixins.less
