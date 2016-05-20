@@ -526,7 +526,7 @@ The file will look something like this:
 
 ```
 
-Include [normalize.css](http://necolas.github.io/normalize.css/) at the top of the file. It standardizes CSS defaults across browsers. You should use it in all projects. Then include variables, mixins, and utils (respectively).
+Include [normalize.css](https://necolas.github.io/normalize.css/) at the top of the file. It standardizes CSS defaults across browsers. You should use it in all projects. Then include variables, mixins, and utils (respectively).
 
 Then include the components. Each component should have its own file and include all the necessary modifiers, states, and media queries. If components are well encapsulated, the order should not matter. Break up components into logical folders by section.
 
