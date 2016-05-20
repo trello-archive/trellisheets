@@ -584,7 +584,7 @@ Some additional things to keep in mind:
 
 Performance probably deserves its own guide, but I’ll talk about two big concepts: selector performance and layouts/paints.
 
-Selector performance seems to matters less and less these days, but can be a problem in a complex, single-page app with thousands of DOM elements (like Trello). [The CSS Tricks article about selector performance](http://css-tricks.com/efficiently-rendering-css/) should help explain the important concept of the key selector. Seemingly specific rules like `.component-descendant-descendant div` are actual quite expensive in complex apps because rules are read _from right to left_. It needs to look up all the divs first (which could be thousands) then go up the DOM from there.
+Selector performance seems to matters less and less these days, but can be a problem in a complex, single-page app with thousands of DOM elements (like Trello). [The CSS-Tricks article about selector performance](http://css-tricks.com/efficiently-rendering-css/) should help explain the important concept of the key selector. Seemingly specific rules like `.component-descendant-descendant div` are actual quite expensive in complex apps because rules are read _from right to left_. It needs to look up all the divs first (which could be thousands) then go up the DOM from there.
 
 [Juriy Zaytsev’s post on CSS profiling](http://perfectionkills.com/profiling-css-for-fun-and-profit-optimization-notes/) profiles browsers on selector matching, layouts, paints, and parsing times of a complex app. It confirms the theory that highly specific selectors are bad for big apps. Harry Roberts of CSS Wizardry also wrote about [CSS selector performance](http://csswizardry.com/2011/09/writing-efficient-css-selectors/).
 
@@ -601,4 +601,4 @@ This styleguide was influenced by discussions about CSS around the web. Here’s
 - The BEM, or “block, element, modifier”, methodology is similar to our components. It is well explained in [this CSS Wizardry article](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/).
 - [RSCSS](http://rscss.io/index.html)
 - [18F CSS Coding Styleguide](https://pages.18f.gov/frontend/css-coding-styleguide/)
-- [“CSS At…” from CSS Tricks](http://css-tricks.com/css/). A big list of CSS practices at various companies.
+- [“CSS At…” from CSS-Tricks](http://css-tricks.com/css/). A big list of CSS practices at various companies.
