@@ -455,7 +455,7 @@ Mixins are shared styles that are used in more than one component. Mixins should
 
 Previously, we used mixins for browser prefixed features, but we use [autoprefixer](https://www.npmjs.com/package/autoprefixer) for that now.
 
-When using a mixin, it should include the parenthesis to make it more obvious that it’s a mixin. Example usage:
+When using a mixin, it should include the parentheses to make it more obvious that it’s a mixin. Example usage:
 
 ``` LESS
 // mixins.less
@@ -526,7 +526,7 @@ The file will look something like this:
 
 ```
 
-Include [normalize.css](http://necolas.github.io/normalize.css/) at the top of the file. It standardizes CSS defaults across browsers. You should use it in all projects. Then include variables, mixins, and utils (respectively).
+Include [normalize.css](https://necolas.github.io/normalize.css/) at the top of the file. It standardizes CSS defaults across browsers. You should use it in all projects. Then include variables, mixins, and utils (respectively).
 
 Then include the components. Each component should have its own file and include all the necessary modifiers, states, and media queries. If components are well encapsulated, the order should not matter. Break up components into logical folders by section.
 
@@ -550,14 +550,14 @@ Even following the above guidelines, it’s still possible to write CSS in a ton
 
 It sticks to these style rules:
 
--	Use a new line for every selector and every declaration.
+- Use a new line for every selector and every declaration.
 - Use two new lines between rules.
--	Add a single space between the property and value, for example `prop: value;` and not `prop:value;`.
--	Alphabetize declarations.
--	Use 2 spaces to indent, not 4 spaces and not tabs.
--	No underscores or camelCase for selectors.
+- Add a single space between the property and value, for example `prop: value;` and not `prop:value;`.
+- Alphabetize declarations.
+- Use 2 spaces to indent, not 4 spaces and not tabs.
+- No underscores or camelCase for selectors.
 - Use shorthand when appropriate, like `padding: 15px 0;` and not `padding: 15px 0px 15px 0px;`.
--	Generally, use the brand color variables. When using a color, especially grayscale tones, prefer hsl(a) over hex and rgb(a) when adding colors. It’s easier to adjust the lightness or darkness, since you only have one variable to tweak.
+- Generally, use the brand color variables. When using a color, especially grayscale tones, prefer hsl(a) over hex and rgb(a) when adding colors. It’s easier to adjust the lightness or darkness, since you only have one variable to tweak.
 - No trailing whitespace.
 - Keep line length under 80 characters.
 
@@ -582,9 +582,9 @@ Some additional things to keep in mind:
 
 ### Performance
 
-Performance probably deserves it’s own guide, but I’ll talk about two big concepts: selector performance and layouts/paints.
+Performance probably deserves its own guide, but I’ll talk about two big concepts: selector performance and layouts/paints.
 
-Selector performance seems to matters less and less these days, but can be a problem in a complex, single-page app with thousands of DOM elements (like Trello). [The CSS Tricks article about selector performance](http://css-tricks.com/efficiently-rendering-css/) should help explain the important concept of the key selector. Seemingly specific rules like `.component-descendant-descendant div` are actual quite expensive in complex apps because rules are read _from right to left_. It needs to look up all the divs first (which could be thousands) then go up the DOM from there.
+Selector performance seems to matters less and less these days, but can be a problem in a complex, single-page app with thousands of DOM elements (like Trello). [The CSS-Tricks article about selector performance](http://css-tricks.com/efficiently-rendering-css/) should help explain the important concept of the key selector. Seemingly specific rules like `.component-descendant-descendant div` are actual quite expensive in complex apps because rules are read _from right to left_. It needs to look up all the divs first (which could be thousands) then go up the DOM from there.
 
 [Juriy Zaytsev’s post on CSS profiling](http://perfectionkills.com/profiling-css-for-fun-and-profit-optimization-notes/) profiles browsers on selector matching, layouts, paints, and parsing times of a complex app. It confirms the theory that highly specific selectors are bad for big apps. Harry Roberts of CSS Wizardry also wrote about [CSS selector performance](http://csswizardry.com/2011/09/writing-efficient-css-selectors/).
 
@@ -601,4 +601,4 @@ This styleguide was influenced by discussions about CSS around the web. Here’s
 - The BEM, or “block, element, modifier”, methodology is similar to our components. It is well explained in [this CSS Wizardry article](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/).
 - [RSCSS](http://rscss.io/index.html)
 - [18F CSS Coding Styleguide](https://pages.18f.gov/frontend/css-coding-styleguide/)
-- [“CSS At…” from CSS Tricks](http://css-tricks.com/css/). A big list of CSS practices at various companies.
+- [“CSS At…” from CSS-Tricks](http://css-tricks.com/css/). A big list of CSS practices at various companies.
