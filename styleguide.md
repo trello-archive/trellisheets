@@ -550,14 +550,14 @@ Even following the above guidelines, it’s still possible to write CSS in a ton
 
 It sticks to these style rules:
 
--	Use a new line for every selector and every declaration.
+- Use a new line for every selector and every declaration.
 - Use two new lines between rules.
--	Add a single space between the property and value, for example `prop: value;` and not `prop:value;`.
--	Alphabetize declarations.
--	Use 2 spaces to indent, not 4 spaces and not tabs.
--	No underscores or camelCase for selectors.
+- Add a single space between the property and value, for example `prop: value;` and not `prop:value;`.
+- Alphabetize declarations.
+- Use 2 spaces to indent, not 4 spaces and not tabs.
+- No underscores or camelCase for selectors.
 - Use shorthand when appropriate, like `padding: 15px 0;` and not `padding: 15px 0px 15px 0px;`.
--	Generally, use the brand color variables. When using a color, especially grayscale tones, prefer hsl(a) over hex and rgb(a) when adding colors. It’s easier to adjust the lightness or darkness, since you only have one variable to tweak.
+- Generally, use the brand color variables. When using a color, especially grayscale tones, prefer hsl(a) over hex and rgb(a) when adding colors. It’s easier to adjust the lightness or darkness, since you only have one variable to tweak.
 - No trailing whitespace.
 - Keep line length under 80 characters.
 
