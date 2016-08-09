@@ -266,7 +266,7 @@ As an example, you should keep list and item components separate. For a list of 
 
 -----
 
-Now a more complex example. You may reuse the `button` component inside the `member-list` component. We need to change the button’s size and positioning to fit the list. The smaller button can be reused in multiple places, so we’ll add a modifier in the button component (like, `.button.mod-small`), which we’ll use in member-list (and elsewhere). Now we do the positioning within the member list component, since that’s specific to the member list.
+Now a more complex example. You may reuse the `button` component inside the `member-list` component. We need to change the button’s size and positioning to fit the list. The smaller button can be reused in multiple places, so we’ll add a modifier in the button component (like, `button.mod-small`), which we’ll use in member-list (and elsewhere). Now we do the positioning within the member list component, since that’s specific to the member list.
 
 Here’s an example:
 
